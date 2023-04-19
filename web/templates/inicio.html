@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+
+{% block content %}
+    {% if usuario %}
+        <p>Bienvenido, {{ usuario }}!</p>
+    {% else %}
+        <p>Bienvenidos al catálogo de marcadoras de airsoft</p>
+        <p>En esta app se pueden recopilar datos de las distintas marcadoras.</p>
+        <p>Una marcadora es una réplica de un arma.</p>
+    {% endif %}
+{% endblock %}

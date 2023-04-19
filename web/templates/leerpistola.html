@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Lista de Marcadoras de pistolas</title>
+</head>
+<body>
+ {% if lpistola %}
+  <ul>
+    {% for p in lpistola %}
+      <li>{{ p.nombre }}, FPS: {{ p.fps }},</li>
+      <button>
+        <a href="{% url 'Eliminarpistola' p.nombre %}">Eliminar</a>
+       <a href="{% url 'editarpistola' p.nombre %}">Editar</a>
+    </button>
+   
+    {% empty %}
+      
+    {% endfor %}
+   </ul>
+  <a href="{% url 'pistolas' %}">Agregar una nueva marcadora de pistolas</a>
+ {% else %}
+  <p>No hay marcadoras de pistolas.</p>
+  <a href="{% url 'pistolas' %}">Agregar la primera marcadora de pistolas</a>
+ {% endif %}
+ <button onclick="window.location.href =  '{% url 'pistolas' %}'">Volver a pistolas</button>
+
+
+
+</body>
+</html>

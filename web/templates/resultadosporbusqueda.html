@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if pistolas %}
+        <p>Estamos buscando pistolas con una velocidad de {{ fps }} fps</p>
+        <ul> 
+        {% for pistola in pistolas %}
+            <li>{{ pistola.nombre }}</li>
+            <li>{{ pistola.fps }}</li>
+        {% endfor %}
+        </ul>
+    {% else %} 
+        <p>No hay datos con esa descripción</p>
+    {% endif %}
+    <p style="color: red;">{{ respuesta }}</p>
+</body>
+</html>

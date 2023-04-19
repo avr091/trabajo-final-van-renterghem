@@ -1,0 +1,22 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>En esta seccion podemos cargar datos de marcadoras de DMR</h1>
+<p>el dmr (rol de tirador selecto) usa altos fps y marcadoras de presicion</p>
+
+<p>formulario para agregar dmr</p>
+{% if miformulario.errors %}
+<p style="color: red;">estan mal los datos, revisar</p>
+{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ miformulario.as_table }}
+    </table>
+    <input type="submit" value="enviar">
+
+{% endblock %}
